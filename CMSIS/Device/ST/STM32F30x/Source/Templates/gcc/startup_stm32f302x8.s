@@ -9,7 +9,7 @@
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
   *                - Set the vector table entries with the exceptions ISR address,
-  *                - Configure the clock system  
+  *                - Configure the clock system
   *                - Branches to main in the C library (which eventually
   *                  calls main()).
   *            After Reset the Cortex-M4 processor is in Thread mode,
@@ -25,8 +25,8 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
@@ -69,7 +69,7 @@ defined in linker script */
 	.type	Reset_Handler, %function
 Reset_Handler:
 	ldr   sp, =_estack      /* Set stack pointer */
-  
+
 /* Copy the data segment initializers from flash to SRAM */
 	movs	r1, #0
 	b	LoopCopyDataInit
@@ -107,7 +107,7 @@ LoopFillZerobss:
 
 LoopForever:
     b LoopForever
-    
+
 .size	Reset_Handler, .-Reset_Handler
 
 /**
@@ -398,10 +398,10 @@ g_pfnVectors:
 
 	.weak	COMP2_IRQHandler
 	.thumb_set COMP2_IRQHandler,Default_Handler
-	
+
 	.weak	COMP4_6_IRQHandler
 	.thumb_set COMP4_6_IRQHandler,Default_Handler
-	
+
 	.weak	I2C3_EV_IRQHandler
 	.thumb_set I2C3_EV_IRQHandler,Default_Handler
 
@@ -410,13 +410,13 @@ g_pfnVectors:
 
 	.weak	USB_HP_IRQHandler
 	.thumb_set USB_HP_IRQHandler,Default_Handler
-	
+
 	.weak	USB_LP_IRQHandler
 	.thumb_set USB_LP_IRQHandler,Default_Handler
-	
+
 	.weak	USBWakeUp_RMP_IRQHandler
 	.thumb_set USBWakeUp_RMP_IRQHandler,Default_Handler
-	
+
 	.weak	FPU_IRQHandler
 	.thumb_set FPU_IRQHandler,Default_Handler
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

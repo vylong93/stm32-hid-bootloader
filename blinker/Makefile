@@ -10,7 +10,7 @@ DEVICE_SRCS += ../CMSIS/Device/ST/STM32F10x/Source/Templates/gcc/startup_stm32f1
 DEVICE_SRCS += system_stm32f10x.c
 
 INCLUDE_DIRS += -I .
-INCLUDE_DIRS += -I ../CMSIS/Device/ST/STM32F10x/Include 
+INCLUDE_DIRS += -I ../CMSIS/Device/ST/STM32F10x/Include
 INCLUDE_DIRS += -I ../CMSIS/Include
 
 LINKER_SCRIPT = STM32F103C8T6.ld
@@ -73,7 +73,7 @@ $(TARGET).hex: $(TARGET).elf
 
 $(TARGET).bin: $(TARGET).elf
 	$(OBJCOPY) -O binary $< $@
-	
+
 gccversion:
 	@$(CC) --version
 
@@ -94,6 +94,6 @@ clean:
 	$(RM) -f $(TARGET).dis
 	$(RM) -f $(TARGET).map
 	$(RM) -f $(OBJS)
-	
+
 flash: $(TARGET).bin
 	hid-flash $(TARGET).bin

@@ -3,30 +3,30 @@
 ;* Author             : MCD Application Team
 ;* Version            : V3.6.4
 ;* Date               : 22-September-2016
-;* Description        : STM32F10x Medium Density Devices vector table for 
+;* Description        : STM32F10x Medium Density Devices vector table for
 ;*                      EWARM toolchain.
 ;*                      This module performs:
 ;*                      - Set the initial SP
 ;*                      - Configure the clock system
 ;*                      - Set the initial PC == __iar_program_start,
-;*                      - Set the vector table entries with the exceptions ISR 
+;*                      - Set the vector table entries with the exceptions ISR
 ;*                        address.
 ;*                      After Reset the Cortex-M3 processor is in Thread mode,
 ;*                      priority is Privileged, and the Stack is set to Main.
 ;********************************************************************************
-;* 
+;*
 ;* Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
 ;* You may not use this file except in compliance with the License.
 ;* You may obtain a copy of the License at:
-;* 
+;*
 ;*        http://www.st.com/software_license_agreement_liberty_v2
-;* 
-;* Unless required by applicable law or agreed to in writing, software 
-;* distributed under the License is distributed on an "AS IS" BASIS, 
+;*
+;* Unless required by applicable law or agreed to in writing, software
+;* distributed under the License is distributed on an "AS IS" BASIS,
 ;* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ;* See the License for the specific language governing permissions and
 ;* limitations under the License.
-;* 
+;*
 ;*******************************************************************************
 ;
 ;
@@ -53,7 +53,7 @@
         SECTION .intvec:CODE:NOROOT(2)
 
         EXTERN  __iar_program_start
-        EXTERN  SystemInit        
+        EXTERN  SystemInit
         PUBLIC  __vector_table
 
         DATA
@@ -133,7 +133,7 @@ Reset_Handler
         BLX     R0
         LDR     R0, =__iar_program_start
         BX      R0
-        
+
         PUBWEAK NMI_Handler
         SECTION .text:CODE:REORDER:NOROOT(1)
 NMI_Handler

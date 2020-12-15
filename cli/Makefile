@@ -25,12 +25,12 @@ OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE = hid-flash
 
 all: $(SOURCES) $(EXECUTABLE)
-	
-$(EXECUTABLE): $(OBJECTS) 
+
+$(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $@
 
 .c.o:
 	$(CC) $(CFLAGS) $(INCLUDE_DIRS) $< -o $@
-	
+
 clean:
 	rm -f $(OBJECTS) $(EXECUTABLE) $(EXECUTABLE).exe

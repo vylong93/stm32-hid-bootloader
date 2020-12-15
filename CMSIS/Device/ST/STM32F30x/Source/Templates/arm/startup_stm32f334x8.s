@@ -3,7 +3,7 @@
 ;* Author             : MCD Application Team
 ;* Version            : V1.2.2
 ;* Date               : 27-February-2015
-;* Description        : STM32F334 devices vector table for MDK-ARM toolchain. 
+;* Description        : STM32F334 devices vector table for MDK-ARM toolchain.
 ;*                      This module performs:
 ;*                      - Set the initial SP
 ;*                      - Set the initial PC == Reset_Handler
@@ -12,21 +12,21 @@
 ;*                        calls main()).
 ;*                      After Reset the CortexM4 processor is in Thread mode,
 ;*                      priority is Privileged, and the Stack is set to Main.
-;* <<< Use Configuration Wizard in Context Menu >>>   
+;* <<< Use Configuration Wizard in Context Menu >>>
 ;*******************************************************************************
-; 
+;
 ; Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
 ; You may not use this file except in compliance with the License.
 ; You may obtain a copy of the License at:
-; 
+;
 ;        http://www.st.com/software_license_agreement_liberty_v2
-; 
-; Unless required by applicable law or agreed to in writing, software 
-; distributed under the License is distributed on an "AS IS" BASIS, 
+;
+; Unless required by applicable law or agreed to in writing, software
+; distributed under the License is distributed on an "AS IS" BASIS,
 ; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ; See the License for the specific language governing permissions and
 ; limitations under the License.
-; 
+;
 ;*******************************************************************************
 
 ; Amount of memory (in bytes) allocated for Stack
@@ -81,87 +81,87 @@ __Vectors       DCD     __initial_sp               ; Top of Stack
                 DCD     SysTick_Handler            ; SysTick Handler
 
                 ; External Interrupts
-                DCD     WWDG_IRQHandler                   ; Window WatchDog                                        
-                DCD     PVD_IRQHandler                    ; PVD through EXTI Line detection                        
-                DCD     TAMPER_STAMP_IRQHandler           ; Tamper and TimeStamps through the EXTI line            
-                DCD     RTC_WKUP_IRQHandler               ; RTC Wakeup through the EXTI line                       
-                DCD     FLASH_IRQHandler                  ; FLASH                                           
-                DCD     RCC_IRQHandler                    ; RCC                                             
-                DCD     EXTI0_IRQHandler                  ; EXTI Line0                                             
-                DCD     EXTI1_IRQHandler                  ; EXTI Line1                                             
-                DCD     EXTI2_TS_IRQHandler               ; EXTI Line2 and Touch Sense                                             
-                DCD     EXTI3_IRQHandler                  ; EXTI Line3                                             
-                DCD     EXTI4_IRQHandler                  ; EXTI Line4                                             
-                DCD     DMA1_Channel1_IRQHandler          ; DMA1 Channel 1                                   
-                DCD     DMA1_Channel2_IRQHandler          ; DMA1 Channel 2                                   
-                DCD     DMA1_Channel3_IRQHandler          ; DMA1 Channel 3                                   
-                DCD     DMA1_Channel4_IRQHandler          ; DMA1 Channel 4                                   
-                DCD     DMA1_Channel5_IRQHandler          ; DMA1 Channel 5                                   
-                DCD     DMA1_Channel6_IRQHandler          ; DMA1 Channel 6                                   
-                DCD     DMA1_Channel7_IRQHandler          ; DMA1 Channel 7                                   
-                DCD     ADC1_2_IRQHandler                 ; ADC1 and ADC2                            
-                DCD     CAN1_TX_IRQHandler                ; CAN1 TX                                               
-                DCD     CAN1_RX0_IRQHandler               ; CAN1 RX0                                               
-                DCD     CAN1_RX1_IRQHandler               ; CAN1 RX1                                               
-                DCD     CAN1_SCE_IRQHandler               ; CAN1 SCE                                               
-                DCD     EXTI9_5_IRQHandler                ; External Line[9:5]s                                    
-                DCD     TIM1_BRK_TIM15_IRQHandler         ; TIM1 Break and TIM15                   
-                DCD     TIM1_UP_TIM16_IRQHandler          ; TIM1 Update and TIM16                 
+                DCD     WWDG_IRQHandler                   ; Window WatchDog
+                DCD     PVD_IRQHandler                    ; PVD through EXTI Line detection
+                DCD     TAMPER_STAMP_IRQHandler           ; Tamper and TimeStamps through the EXTI line
+                DCD     RTC_WKUP_IRQHandler               ; RTC Wakeup through the EXTI line
+                DCD     FLASH_IRQHandler                  ; FLASH
+                DCD     RCC_IRQHandler                    ; RCC
+                DCD     EXTI0_IRQHandler                  ; EXTI Line0
+                DCD     EXTI1_IRQHandler                  ; EXTI Line1
+                DCD     EXTI2_TS_IRQHandler               ; EXTI Line2 and Touch Sense
+                DCD     EXTI3_IRQHandler                  ; EXTI Line3
+                DCD     EXTI4_IRQHandler                  ; EXTI Line4
+                DCD     DMA1_Channel1_IRQHandler          ; DMA1 Channel 1
+                DCD     DMA1_Channel2_IRQHandler          ; DMA1 Channel 2
+                DCD     DMA1_Channel3_IRQHandler          ; DMA1 Channel 3
+                DCD     DMA1_Channel4_IRQHandler          ; DMA1 Channel 4
+                DCD     DMA1_Channel5_IRQHandler          ; DMA1 Channel 5
+                DCD     DMA1_Channel6_IRQHandler          ; DMA1 Channel 6
+                DCD     DMA1_Channel7_IRQHandler          ; DMA1 Channel 7
+                DCD     ADC1_2_IRQHandler                 ; ADC1 and ADC2
+                DCD     CAN1_TX_IRQHandler                ; CAN1 TX
+                DCD     CAN1_RX0_IRQHandler               ; CAN1 RX0
+                DCD     CAN1_RX1_IRQHandler               ; CAN1 RX1
+                DCD     CAN1_SCE_IRQHandler               ; CAN1 SCE
+                DCD     EXTI9_5_IRQHandler                ; External Line[9:5]s
+                DCD     TIM1_BRK_TIM15_IRQHandler         ; TIM1 Break and TIM15
+                DCD     TIM1_UP_TIM16_IRQHandler          ; TIM1 Update and TIM16
                 DCD     TIM1_TRG_COM_TIM17_IRQHandler     ; TIM1 Trigger and Commutation and TIM17
-                DCD     TIM1_CC_IRQHandler                ; TIM1 Capture Compare                                   
-                DCD     TIM2_IRQHandler                   ; TIM2                                            
-                DCD     TIM3_IRQHandler                   ; TIM3                                            
-                DCD     0                                 ; Reserved                                            
-                DCD     I2C1_EV_IRQHandler         ; I2C1 Event and EXTI Line 23                                            
-                DCD     I2C1_ER_IRQHandler                ; I2C1 Error                                             
-                DCD     0                                 ; Reserved                                             
-                DCD     0                                 ; Reserved                                               
-                DCD     SPI1_IRQHandler                   ; SPI1                                            
-                DCD     0                                 ; Reserved                                            
-                DCD     USART1_IRQHandler          ; USART1 and EXTI Line 25                                         
-                DCD     USART2_IRQHandler          ; USART2 and EXTI Line 26                                         
-                DCD     USART3_IRQHandler          ; USART3 and EXTI Line 28                                         
-                DCD     EXTI15_10_IRQHandler              ; External Line[15:10]s                                  
-                DCD     RTC_Alarm_IRQHandler              ; RTC Alarm (A and B) through EXTI Line                  
-                DCD     0                                 ; Reserved                        
-                DCD     0                                 ; Reserved                  
-                DCD     0                                 ; Reserved                
+                DCD     TIM1_CC_IRQHandler                ; TIM1 Capture Compare
+                DCD     TIM2_IRQHandler                   ; TIM2
+                DCD     TIM3_IRQHandler                   ; TIM3
                 DCD     0                                 ; Reserved
-                DCD     0                                 ; Reserved                                   
-                DCD     0                                 ; Reserved                                           
-                DCD     0                                 ; Reserved                                            
-                DCD     0                                 ; Reserved                                            
-                DCD     0                                 ; Reserved                                            
-                DCD     0                                 ; Reserved                                            
-                DCD     0                                 ; Reserved                                           
-                DCD     0                                 ; Reserved                                          
-                DCD     TIM6_DAC1_IRQHandler               ; TIM6 and DAC1 underrun errors                   
-                DCD     TIM7_DAC2_IRQHandler               ; TIM7 and DAC2 underrun errors                  
-                DCD     0                                 ; Reserved                                   
-                DCD     0                                 ; Reserved                                  
-                DCD     0                                 ; Reserved                                   
-                DCD     0                                 ; Reserved                                  
-                DCD     0                                 ; Reserved                                   
-                DCD     0                                 ; Reserved                                        
-                DCD     0                                 ; Reserved                      
-                DCD     0                                 ; Reserved                                               
-                DCD     COMP2_IRQHandler                  ; COMP2                                               
-                DCD     COMP4_6_IRQHandler                ; COMP4, COMP6                                              
-                DCD     0                                 ; Reserved                                               
-                DCD     HRTIM1_Master_IRQHandler          ; HRTIM1 master timer                                      
-                DCD     HRTIM1_TIMA_IRQHandler            ; Reserved                                   
-                DCD     HRTIM1_TIMB_IRQHandler            ; Reserved                                   
-                DCD     HRTIM1_TIMC_IRQHandler            ; Reserved                                   
-                DCD     HRTIM1_TIMD_IRQHandler            ; Reserved                                           
-                DCD     HRTIM1_TIME_IRQHandler            ; Reserved                                             
-                DCD     HRTIM1_FLT_IRQHandler             ; Reserved                                             
-                DCD     0                                 ; Reserved                       
-                DCD     0                                 ; Reserved                    
-                DCD     0                                 ; Reserved                         
-                DCD     0                                 ; Reserved                                       
-                DCD     0                                 ; Reserved                                        
-                DCD     0                                 ; Reserved                                      
-                DCD     0                                 ; Reserved 
+                DCD     I2C1_EV_IRQHandler         ; I2C1 Event and EXTI Line 23
+                DCD     I2C1_ER_IRQHandler                ; I2C1 Error
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     SPI1_IRQHandler                   ; SPI1
+                DCD     0                                 ; Reserved
+                DCD     USART1_IRQHandler          ; USART1 and EXTI Line 25
+                DCD     USART2_IRQHandler          ; USART2 and EXTI Line 26
+                DCD     USART3_IRQHandler          ; USART3 and EXTI Line 28
+                DCD     EXTI15_10_IRQHandler              ; External Line[15:10]s
+                DCD     RTC_Alarm_IRQHandler              ; RTC Alarm (A and B) through EXTI Line
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     TIM6_DAC1_IRQHandler               ; TIM6 and DAC1 underrun errors
+                DCD     TIM7_DAC2_IRQHandler               ; TIM7 and DAC2 underrun errors
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     COMP2_IRQHandler                  ; COMP2
+                DCD     COMP4_6_IRQHandler                ; COMP4, COMP6
+                DCD     0                                 ; Reserved
+                DCD     HRTIM1_Master_IRQHandler          ; HRTIM1 master timer
+                DCD     HRTIM1_TIMA_IRQHandler            ; Reserved
+                DCD     HRTIM1_TIMB_IRQHandler            ; Reserved
+                DCD     HRTIM1_TIMC_IRQHandler            ; Reserved
+                DCD     HRTIM1_TIMD_IRQHandler            ; Reserved
+                DCD     HRTIM1_TIME_IRQHandler            ; Reserved
+                DCD     HRTIM1_FLT_IRQHandler             ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
+                DCD     0                                 ; Reserved
                 DCD     FPU_IRQHandler                    ; FPU
 
 __Vectors_End
@@ -228,35 +228,35 @@ SysTick_Handler PROC
 
 Default_Handler PROC
 
-                EXPORT  WWDG_IRQHandler                   [WEAK]                                        
-                EXPORT  PVD_IRQHandler                    [WEAK]                      
+                EXPORT  WWDG_IRQHandler                   [WEAK]
+                EXPORT  PVD_IRQHandler                    [WEAK]
                 EXPORT  TAMPER_STAMP_IRQHandler           [WEAK]
-                EXPORT  RTC_WKUP_IRQHandler               [WEAK]                     
-                EXPORT  FLASH_IRQHandler                  [WEAK]                                         
-                EXPORT  RCC_IRQHandler                    [WEAK]                                            
-                EXPORT  EXTI0_IRQHandler                  [WEAK]                                            
-                EXPORT  EXTI1_IRQHandler                  [WEAK]                                             
+                EXPORT  RTC_WKUP_IRQHandler               [WEAK]
+                EXPORT  FLASH_IRQHandler                  [WEAK]
+                EXPORT  RCC_IRQHandler                    [WEAK]
+                EXPORT  EXTI0_IRQHandler                  [WEAK]
+                EXPORT  EXTI1_IRQHandler                  [WEAK]
                 EXPORT  EXTI2_TS_IRQHandler               [WEAK]
-                EXPORT  EXTI3_IRQHandler                  [WEAK]                                           
-                EXPORT  EXTI4_IRQHandler                  [WEAK]                                            
-                EXPORT  DMA1_Channel1_IRQHandler          [WEAK]                                
-                EXPORT  DMA1_Channel2_IRQHandler          [WEAK]                                   
-                EXPORT  DMA1_Channel3_IRQHandler          [WEAK]                                   
-                EXPORT  DMA1_Channel4_IRQHandler          [WEAK]                                   
-                EXPORT  DMA1_Channel5_IRQHandler          [WEAK]                                   
-                EXPORT  DMA1_Channel6_IRQHandler          [WEAK]                                   
-                EXPORT  DMA1_Channel7_IRQHandler          [WEAK]                                   
-                EXPORT  ADC1_2_IRQHandler                 [WEAK]                         
+                EXPORT  EXTI3_IRQHandler                  [WEAK]
+                EXPORT  EXTI4_IRQHandler                  [WEAK]
+                EXPORT  DMA1_Channel1_IRQHandler          [WEAK]
+                EXPORT  DMA1_Channel2_IRQHandler          [WEAK]
+                EXPORT  DMA1_Channel3_IRQHandler          [WEAK]
+                EXPORT  DMA1_Channel4_IRQHandler          [WEAK]
+                EXPORT  DMA1_Channel5_IRQHandler          [WEAK]
+                EXPORT  DMA1_Channel6_IRQHandler          [WEAK]
+                EXPORT  DMA1_Channel7_IRQHandler          [WEAK]
+                EXPORT  ADC1_2_IRQHandler                 [WEAK]
                 EXPORT  CAN1_TX_IRQHandler                [WEAK]
                 EXPORT  CAN1_RX0_IRQHandler               [WEAK]
-                EXPORT  CAN1_RX1_IRQHandler               [WEAK]                                                
-                EXPORT  CAN1_SCE_IRQHandler               [WEAK]                                                
+                EXPORT  CAN1_RX1_IRQHandler               [WEAK]
+                EXPORT  CAN1_SCE_IRQHandler               [WEAK]
                 EXPORT  EXTI9_5_IRQHandler                [WEAK]
-                EXPORT  TIM1_BRK_TIM15_IRQHandler         [WEAK]                  
-                EXPORT  TIM1_UP_TIM16_IRQHandler          [WEAK]                
-                EXPORT  TIM1_TRG_COM_TIM17_IRQHandler     [WEAK] 
-                EXPORT  TIM1_CC_IRQHandler                [WEAK]                                   
-                EXPORT  TIM2_IRQHandler                   [WEAK]                                            
+                EXPORT  TIM1_BRK_TIM15_IRQHandler         [WEAK]
+                EXPORT  TIM1_UP_TIM16_IRQHandler          [WEAK]
+                EXPORT  TIM1_TRG_COM_TIM17_IRQHandler     [WEAK]
+                EXPORT  TIM1_CC_IRQHandler                [WEAK]
+                EXPORT  TIM2_IRQHandler                   [WEAK]
                 EXPORT  TIM3_IRQHandler                   [WEAK]
                 EXPORT  I2C1_EV_IRQHandler         [WEAK]
                 EXPORT  I2C1_ER_IRQHandler                [WEAK]
@@ -264,7 +264,7 @@ Default_Handler PROC
                 EXPORT  USART1_IRQHandler          [WEAK]
                 EXPORT  USART2_IRQHandler          [WEAK]
                 EXPORT  USART3_IRQHandler          [WEAK]
-                EXPORT  EXTI15_10_IRQHandler              [WEAK]                                  
+                EXPORT  EXTI15_10_IRQHandler              [WEAK]
                 EXPORT  RTC_Alarm_IRQHandler              [WEAK]
                 EXPORT  TIM6_DAC1_IRQHandler               [WEAK]
                 EXPORT  TIM7_DAC2_IRQHandler               [WEAK]
@@ -272,56 +272,56 @@ Default_Handler PROC
                 EXPORT  COMP4_6_IRQHandler              [WEAK]
                 EXPORT  HRTIM1_Master_IRQHandler          [WEAK]
                 EXPORT  HRTIM1_TIMA_IRQHandler            [WEAK]
-                EXPORT  HRTIM1_TIMB_IRQHandler            [WEAK] 
+                EXPORT  HRTIM1_TIMB_IRQHandler            [WEAK]
                 EXPORT  HRTIM1_TIMC_IRQHandler            [WEAK]
                 EXPORT  HRTIM1_TIMD_IRQHandler            [WEAK]
                 EXPORT  HRTIM1_TIME_IRQHandler            [WEAK]
                 EXPORT  HRTIM1_FLT_IRQHandler             [WEAK]
-                EXPORT  FPU_IRQHandler                    [WEAK]                
+                EXPORT  FPU_IRQHandler                    [WEAK]
 
-WWDG_IRQHandler                                                       
-PVD_IRQHandler                                      
-TAMPER_STAMP_IRQHandler                  
-RTC_WKUP_IRQHandler                                
-FLASH_IRQHandler                                                       
-RCC_IRQHandler                                                            
-EXTI0_IRQHandler                                                          
-EXTI1_IRQHandler                                                           
-EXTI2_TS_IRQHandler                                                          
-EXTI3_IRQHandler                                                         
-EXTI4_IRQHandler                                                          
-DMA1_Channel1_IRQHandler                                       
-DMA1_Channel2_IRQHandler                                          
-DMA1_Channel3_IRQHandler                                          
-DMA1_Channel4_IRQHandler                                          
-DMA1_Channel5_IRQHandler                                          
-DMA1_Channel6_IRQHandler                                          
-DMA1_Channel7_IRQHandler                                          
-ADC1_2_IRQHandler                                         
+WWDG_IRQHandler
+PVD_IRQHandler
+TAMPER_STAMP_IRQHandler
+RTC_WKUP_IRQHandler
+FLASH_IRQHandler
+RCC_IRQHandler
+EXTI0_IRQHandler
+EXTI1_IRQHandler
+EXTI2_TS_IRQHandler
+EXTI3_IRQHandler
+EXTI4_IRQHandler
+DMA1_Channel1_IRQHandler
+DMA1_Channel2_IRQHandler
+DMA1_Channel3_IRQHandler
+DMA1_Channel4_IRQHandler
+DMA1_Channel5_IRQHandler
+DMA1_Channel6_IRQHandler
+DMA1_Channel7_IRQHandler
+ADC1_2_IRQHandler
 CAN1_TX_IRQHandler
 CAN1_RX0_IRQHandler
-CAN1_RX1_IRQHandler                                                           
-CAN1_SCE_IRQHandler                                                           
-EXTI9_5_IRQHandler                                                
-TIM1_BRK_TIM15_IRQHandler                        
-TIM1_UP_TIM16_IRQHandler                      
-TIM1_TRG_COM_TIM17_IRQHandler  
-TIM1_CC_IRQHandler                                               
-TIM2_IRQHandler                                                           
-TIM3_IRQHandler                                                           
-TIM4_IRQHandler                                                           
+CAN1_RX1_IRQHandler
+CAN1_SCE_IRQHandler
+EXTI9_5_IRQHandler
+TIM1_BRK_TIM15_IRQHandler
+TIM1_UP_TIM16_IRQHandler
+TIM1_TRG_COM_TIM17_IRQHandler
+TIM1_CC_IRQHandler
+TIM2_IRQHandler
+TIM3_IRQHandler
+TIM4_IRQHandler
 I2C1_EV_IRQHandler
 I2C1_ER_IRQHandler
 SPI1_IRQHandler
 USART1_IRQHandler
 USART2_IRQHandler
 USART3_IRQHandler
-EXTI15_10_IRQHandler                                            
+EXTI15_10_IRQHandler
 RTC_Alarm_IRQHandler
 TIM6_DAC1_IRQHandler
 TIM7_DAC2_IRQHandler
 COMP2_IRQHandler
-COMP4_6_IRQHandler                                                          
+COMP4_6_IRQHandler
 HRTIM1_Master_IRQHandler
 HRTIM1_TIMA_IRQHandler
 HRTIM1_TIMB_IRQHandler
@@ -329,7 +329,7 @@ HRTIM1_TIMC_IRQHandler
 HRTIM1_TIMD_IRQHandler
 HRTIM1_TIME_IRQHandler
 HRTIM1_FLT_IRQHandler
-FPU_IRQHandler                                                 
+FPU_IRQHandler
 
                 B       .
 
@@ -341,16 +341,16 @@ FPU_IRQHandler
 ; User Stack and Heap initialization
 ;*******************************************************************************
                  IF      :DEF:__MICROLIB
-                
+
                  EXPORT  __initial_sp
                  EXPORT  __heap_base
                  EXPORT  __heap_limit
-                
+
                  ELSE
-                
+
                  IMPORT  __use_two_region_memory
                  EXPORT  __user_initial_stackheap
-                 
+
 __user_initial_stackheap
 
                  LDR     R0, =  Heap_Mem

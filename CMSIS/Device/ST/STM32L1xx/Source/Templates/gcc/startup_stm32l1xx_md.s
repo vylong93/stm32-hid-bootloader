@@ -25,8 +25,8 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
@@ -172,7 +172,7 @@ g_pfnVectors:
   .word DAC_IRQHandler
   .word COMP_IRQHandler
   .word EXTI9_5_IRQHandler
-  .word LCD_IRQHandler  
+  .word LCD_IRQHandler
   .word TIM9_IRQHandler
   .word TIM10_IRQHandler
   .word TIM11_IRQHandler
@@ -198,7 +198,7 @@ g_pfnVectors:
   .word 0
   .word 0
   .word 0
-  .word BootRAM          /* @0x108. This is for boot in RAM mode for 
+  .word BootRAM          /* @0x108. This is for boot in RAM mode for
                             STM32L15x ULtra Low Power Medium-density devices. */
 
 /*******************************************************************************
@@ -309,7 +309,7 @@ g_pfnVectors:
   .thumb_set EXTI9_5_IRQHandler,Default_Handler
 
   .weak LCD_IRQHandler
-  .thumb_set LCD_IRQHandler,Default_Handler  
+  .thumb_set LCD_IRQHandler,Default_Handler
 
   .weak TIM9_IRQHandler
   .thumb_set TIM9_IRQHandler,Default_Handler

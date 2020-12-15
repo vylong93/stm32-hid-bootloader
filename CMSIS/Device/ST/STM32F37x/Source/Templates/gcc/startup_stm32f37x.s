@@ -9,7 +9,7 @@
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
   *                - Set the vector table entries with the exceptions ISR address,
-  *                - Configure the clock system  
+  *                - Configure the clock system
   *                - Branches to main in the C library (which eventually
   *                  calls main()).
   *            After Reset the Cortex-M4 processor is in Thread mode,
@@ -25,8 +25,8 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
@@ -106,7 +106,7 @@ LoopFillZerobss:
 
 LoopForever:
     b LoopForever
-    
+
 .size	Reset_Handler, .-Reset_Handler
 
 /**
@@ -409,7 +409,7 @@ g_pfnVectors:
 
 	.weak	TIM5_IRQHandler
 	.thumb_set TIM5_IRQHandler,Default_Handler
-	
+
 	.weak	SPI3_IRQHandler
 	.thumb_set SPI3_IRQHandler,Default_Handler
 
@@ -435,29 +435,29 @@ g_pfnVectors:
 	.thumb_set DMA2_Channel5_IRQHandler,Default_Handler
 
 	.weak	SDADC1_IRQHandler
-	.thumb_set SDADC1_IRQHandler,Default_Handler	
+	.thumb_set SDADC1_IRQHandler,Default_Handler
 
 	.weak	SDADC2_IRQHandler
-	.thumb_set SDADC2_IRQHandler,Default_Handler	
+	.thumb_set SDADC2_IRQHandler,Default_Handler
 
 	.weak	SDADC3_IRQHandler
-	.thumb_set SDADC3_IRQHandler,Default_Handler	
+	.thumb_set SDADC3_IRQHandler,Default_Handler
 
 	.weak	COMP_IRQHandler
-	.thumb_set COMP_IRQHandler,Default_Handler	
-		
+	.thumb_set COMP_IRQHandler,Default_Handler
+
 	.weak	USB_HP_IRQHandler
 	.thumb_set USB_HP_IRQHandler,Default_Handler
-	
+
 	.weak	USB_LP_IRQHandler
 	.thumb_set USB_LP_IRQHandler,Default_Handler
-	
+
 	.weak	USBWakeUp_IRQHandler
 	.thumb_set USBWakeUp_IRQHandler,Default_Handler
 
 	.weak	TIM19_IRQHandler
 	.thumb_set TIM19_IRQHandler,Default_Handler
-  	
+
 	.weak	FPU_IRQHandler
 	.thumb_set FPU_IRQHandler,Default_Handler
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

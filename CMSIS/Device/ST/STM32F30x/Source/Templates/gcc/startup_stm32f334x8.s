@@ -9,7 +9,7 @@
   *                - Set the initial SP
   *                - Set the initial PC == Reset_Handler,
   *                - Set the vector table entries with the exceptions ISR address,
-  *                - Configure the clock system  
+  *                - Configure the clock system
   *                - Branches to main in the C library (which eventually
   *                  calls main()).
   *            After Reset the Cortex-M4 processor is in Thread mode,
@@ -25,8 +25,8 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
@@ -106,7 +106,7 @@ LoopFillZerobss:
 
 LoopForever:
     b LoopForever
-    
+
 .size	Reset_Handler, .-Reset_Handler
 
 /**
@@ -207,32 +207,32 @@ g_pfnVectors:
 	.word	0
 	.word	TIM6_DAC1_IRQHandler
 	.word	TIM7_DAC2_IRQHandler
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	0                                
 	.word	0
-	.word	COMP2_IRQHandler                 
-	.word	COMP4_6_IRQHandler               
-	.word	0                                
-	.word	HRTIM1_Master_IRQHandler         
-	.word	HRTIM1_TIMA_IRQHandler           
-	.word	HRTIM1_TIMB_IRQHandler           
-	.word	HRTIM1_TIMC_IRQHandler           
-	.word	HRTIM1_TIMD_IRQHandler           
-	.word	HRTIM1_TIME_IRQHandler           
-	.word	HRTIM1_FLT_IRQHandler            
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	0                                
-	.word	FPU_IRQHandler    
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	COMP2_IRQHandler
+	.word	COMP4_6_IRQHandler
+	.word	0
+	.word	HRTIM1_Master_IRQHandler
+	.word	HRTIM1_TIMA_IRQHandler
+	.word	HRTIM1_TIMB_IRQHandler
+	.word	HRTIM1_TIMC_IRQHandler
+	.word	HRTIM1_TIMD_IRQHandler
+	.word	HRTIM1_TIME_IRQHandler
+	.word	HRTIM1_FLT_IRQHandler
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	FPU_IRQHandler
 /*******************************************************************************
 *
 * Provide weak aliases for each Exception handler to the Default_Handler.
@@ -381,10 +381,10 @@ g_pfnVectors:
 
 	.weak	RTC_Alarm_IRQHandler
 	.thumb_set RTC_Alarm_IRQHandler,Default_Handler
-	
+
 	.weak	TIM6_DAC1_IRQHandler
 	.thumb_set TIM6_DAC1_IRQHandler,Default_Handler
-	
+
 	.weak	TIM7_DAC2_IRQHandler
 	.thumb_set TIM7_DAC2_IRQHandler,Default_Handler
 
@@ -401,20 +401,20 @@ g_pfnVectors:
 	.thumb_set HRTIM1_TIMA_IRQHandler,Default_Handler
 
   .weak	HRTIM1_TIMB_IRQHandler
-	.thumb_set HRTIM1_TIMB_IRQHandler,Default_Handler	
+	.thumb_set HRTIM1_TIMB_IRQHandler,Default_Handler
 
   .weak	HRTIM1_TIMC_IRQHandler
-	.thumb_set HRTIM1_TIMC_IRQHandler,Default_Handler	
-  
+	.thumb_set HRTIM1_TIMC_IRQHandler,Default_Handler
+
   .weak	HRTIM1_TIMD_IRQHandler
-	.thumb_set HRTIM1_TIMD_IRQHandler,Default_Handler	
-  
+	.thumb_set HRTIM1_TIMD_IRQHandler,Default_Handler
+
   .weak	HRTIM1_TIME_IRQHandler
-	.thumb_set HRTIM1_TIME_IRQHandler,Default_Handler	
-  
+	.thumb_set HRTIM1_TIME_IRQHandler,Default_Handler
+
   .weak	HRTIM1_FLT_IRQHandler
-	.thumb_set HRTIM1_FLT_IRQHandler,Default_Handler	
-    
+	.thumb_set HRTIM1_FLT_IRQHandler,Default_Handler
+
 	.weak	FPU_IRQHandler
 	.thumb_set FPU_IRQHandler,Default_Handler
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

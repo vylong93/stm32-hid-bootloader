@@ -3,7 +3,7 @@
 ;* Author             : MCD Application Team
 ;* Version            : V1.3.3
 ;* Date               : 20-April-2015
-;* Description        : STM32L1xx Ultra Low Power High-density Devices vector 
+;* Description        : STM32L1xx Ultra Low Power High-density Devices vector
 ;*                      table for MDK-ARM toolchain.
 ;*                      This module performs:
 ;*                      - Set the initial SP
@@ -13,21 +13,21 @@
 ;*                        calls main()).
 ;*                      After Reset the CortexM3 processor is in Thread mode,
 ;*                      priority is Privileged, and the Stack is set to Main.
-;* <<< Use Configuration Wizard in Context Menu >>>   
+;* <<< Use Configuration Wizard in Context Menu >>>
 ;*******************************************************************************
-; 
+;
 ; Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
 ; You may not use this file except in compliance with the License.
 ; You may obtain a copy of the License at:
-; 
+;
 ;        http://www.st.com/software_license_agreement_liberty_v2
-; 
-; Unless required by applicable law or agreed to in writing, software 
-; distributed under the License is distributed on an "AS IS" BASIS, 
+;
+; Unless required by applicable law or agreed to in writing, software
+; distributed under the License is distributed on an "AS IS" BASIS,
 ; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ; See the License for the specific language governing permissions and
 ; limitations under the License.
-; 
+;
 ;*******************************************************************************
 
 ; Amount of memory (in bytes) allocated for Stack
@@ -139,7 +139,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     DMA2_Channel5_IRQHandler  ; DMA2 Channel 5
                 DCD     AES_IRQHandler            ; AES
                 DCD     COMP_ACQ_IRQHandler       ; Comparator Channel Acquisition
-                
+
 __Vectors_End
 
 __Vectors_Size  EQU  __Vectors_End - __Vectors
@@ -150,9 +150,9 @@ __Vectors_Size  EQU  __Vectors_End - __Vectors
 Reset_Handler    PROC
                  EXPORT  Reset_Handler             [WEAK]
         IMPORT  __main
-        IMPORT  SystemInit  
+        IMPORT  SystemInit
                  LDR     R0, =SystemInit
-                 BLX     R0              
+                 BLX     R0
                  LDR     R0, =__main
                  BX      R0
                  ENDP
@@ -249,7 +249,7 @@ Default_Handler PROC
                 EXPORT  TIM6_IRQHandler            [WEAK]
                 EXPORT  TIM7_IRQHandler            [WEAK]
                 EXPORT  SDIO_IRQHandler            [WEAK]
-                EXPORT  TIM5_IRQHandler            [WEAK]                                
+                EXPORT  TIM5_IRQHandler            [WEAK]
                 EXPORT  SPI3_IRQHandler            [WEAK]
                 EXPORT  UART4_IRQHandler           [WEAK]
                 EXPORT  UART5_IRQHandler           [WEAK]
@@ -328,17 +328,17 @@ COMP_ACQ_IRQHandler
 ;*******************************************************************************
 ; User Stack and Heap initialization
 ;*******************************************************************************
-                 IF      :DEF:__MICROLIB           
-                
+                 IF      :DEF:__MICROLIB
+
                  EXPORT  __initial_sp
                  EXPORT  __heap_base
                  EXPORT  __heap_limit
-                
+
                  ELSE
-                
+
                  IMPORT  __use_two_region_memory
                  EXPORT  __user_initial_stackheap
-                 
+
 __user_initial_stackheap
 
                  LDR     R0, =  Heap_Mem
